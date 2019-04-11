@@ -39,7 +39,7 @@ public class Triangle{
     }
 
     public double getEdgeLength(int vectorX, int vectorY) {
-        return Math.sqrt((double)(vectorX * vectorX) + (vectorY * vectorY));
+        return Math.sqrt((vectorX * vectorX) + (vectorY * vectorY));
     }
 
     public String getType() {
@@ -58,10 +58,8 @@ public class Triangle{
     }
 
     public double getArea() {
-        double s;
         double p = getPerimeter() / 2.0;
-        s = Math.sqrt(p * (p - edgeAB) * (p - edgeAC) * (p - edgeBC));
-        return s;
+        return Math.sqrt(p * (p - edgeAB) * (p - edgeAC) * (p - edgeBC));;
     }
 
     public double getPerimeter() {
