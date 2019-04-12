@@ -7,7 +7,7 @@ public class QuadrilateralTest {
     @Test
     public void test_QuadrilateralTest() {
         Quadrilateral quadrilateral = new Quadrilateral(2,35,3,7,1,8,9,21);
-        quadrilateral.showInfo();
+        assertEquals(quadrilateral.showInfo(),"This is Quadrilateral");
     }
 
     @Test

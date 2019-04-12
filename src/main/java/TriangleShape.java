@@ -32,21 +32,19 @@ class TriangleShape implements Shape{
     }
 
     private double getEdgeLength(int vectorX, int vectoY) {
-        return Math.sqrt((double)(vectorX * vectorX) + (vectoY * vectoY));
+        return Math.sqrt((vectorX * vectorX) + (vectoY * vectoY));
     }
 
-    public void showInfo() {
-        System.out.println("Triangle " +"have area "+getArea() +" and Perimeter "+getPerimeter());
+    public String showInfo() {
+        return "This is Triangle";
     }
 
     public double getArea() {
-        double s;
-        double p = getPerimeter()/2.0;
-        s = Math.sqrt(p * (p - edgeAB) * (p - edgeAC) * (p - edgeBC));
-        return s;
+        double p = getPerimeter() / 2.0;
+        return Math.sqrt(p * (p - edgeAB) * (p - edgeAC) * (p - edgeBC));
     }
 
     public double getPerimeter() {
-        return (edgeAB + edgeAC + edgeBC);
+        return edgeAB + edgeAC + edgeBC;
     }
 }

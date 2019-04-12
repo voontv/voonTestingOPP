@@ -59,7 +59,7 @@ public class Triangle{
 
     public double getArea() {
         double p = getPerimeter() / 2.0;
-        return Math.sqrt(p * (p - edgeAB) * (p - edgeAC) * (p - edgeBC));;
+        return Math.sqrt(p * (p - edgeAB) * (p - edgeAC) * (p - edgeBC));
     }
 
     public double getPerimeter() {

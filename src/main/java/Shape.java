@@ -1,6 +1,6 @@
 interface Shape {
 
-    void showInfo();
+    String showInfo();
     double getArea();
     double getPerimeter();
 }

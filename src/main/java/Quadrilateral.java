@@ -50,11 +50,11 @@ class Quadrilateral implements Shape{
     }
 
     private double getEdgeLength(int vectorX, int vectoY) {
-        return Math.sqrt((double)(vectorX * vectorX) + (vectoY * vectoY));
+        return Math.sqrt((vectorX * vectorX) + (vectoY * vectoY));
     }
 
-    public void showInfo() {
-        System.out.println("Quadrilateral" +" have area "+getArea() +" and Perimeter "+getPerimeter());
+    public String showInfo() {
+        return "This is Quadrilateral";
     }
 
     public double getArea() {
@@ -64,18 +64,16 @@ class Quadrilateral implements Shape{
     }
 
     public double getAreaTriangle(double edgeAB, double edgeAC, double edgeBC) {
-        double s;
         double p = getPerimeterTriangle(edgeAB, edgeAC, edgeBC) / 2.0;
-        s = Math.sqrt(p * (p - edgeAB) * (p - edgeAC) * (p - edgeBC));
-        return s;
+        return Math.sqrt(p * (p - edgeAB) * (p - edgeAC) * (p - edgeBC));
     }
 
     public double getPerimeter() {
-        return (edgeAB + edgeBC + edgeCD + edgeAD);
+        return edgeAB + edgeBC + edgeCD + edgeAD;
     }
 
     public double getPerimeterTriangle(double edgeAB, double edgeAC, double edgeBC) {
-        return (edgeAB + edgeAC + edgeBC);
+        return edgeAB + edgeAC + edgeBC;
     }
 
     public double minArea(double area1, double area2) {
