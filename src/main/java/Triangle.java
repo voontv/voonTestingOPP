@@ -39,7 +39,7 @@ public class Triangle{
     }
 
     public double getEdgeLength(int vectorX, int vectorY) {
-        return Math.sqrt((double)(vectorX * vectorX) + (vectorY * vectorY));
+        return Math.sqrt((vectorX * vectorX) + (vectorY * vectorY));
     }
 
     public String getType() {
@@ -58,10 +58,8 @@ public class Triangle{
     }
 
     public double getArea() {
-        double s;
         double p = getPerimeter() / 2.0;
-        s = Math.sqrt(p * (p - edgeAB) * (p - edgeAC) * (p - edgeBC));
-        return s;
+        return Math.sqrt(p * (p - edgeAB) * (p - edgeAC) * (p - edgeBC));
     }
 
     public double getPerimeter() {
@@ -75,9 +73,10 @@ public class Triangle{
     }
 
     public boolean isIsosceles() {
-        return (vectorABX * vectorABX + vectorABY * vectorABY == vectorACX * vectorACX + vectorACY * vectorACY
-                    || vectorABX * vectorABX + vectorABY * vectorABY == vectorBCX * vectorBCX + vectorBCY * vectorBCY
-                    || vectorBCX * vectorBCX + vectorBCY * vectorBCY == vectorACX * vectorACX + vectorACY * vectorACY);
+        long edgeABPow2 = vectorABX * vectorABX + vectorABY * vectorABY;
+        long edgeACPow2 = vectorACX * vectorACX + vectorACY * vectorACY;
+        long edgeBCPow2 = vectorBCX * vectorBCX + vectorBCY * vectorBCY;
+        return edgeABPow2 == edgeACPow2 || edgeABPow2 == edgeBCPow2 || edgeBCPow2 == edgeACPow2;
     }
 
     public boolean isSquareIsosceles() {
@@ -85,7 +84,9 @@ public class Triangle{
     }
 
     public boolean isEquilateral() {
-        return (vectorABX * vectorABX + vectorABY * vectorABY == vectorACX * vectorACX + vectorACY * vectorACY
-                && vectorABX * vectorABX + vectorABY * vectorABY == vectorBCX * vectorBCX + vectorBCY * vectorBCY);
+        long edgeABPow2 = vectorABX * vectorABX + vectorABY * vectorABY;
+        long edgeACPow2 = vectorACX * vectorACX + vectorACY * vectorACY;
+        long edgeBCPow2 = vectorBCX * vectorBCX + vectorBCY * vectorBCY;
+        return edgeABPow2 == edgeACPow2 && edgeBCPow2 == edgeACPow2;
     }
 }
